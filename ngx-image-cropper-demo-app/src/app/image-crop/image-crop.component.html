@@ -1,20 +1,28 @@
-<div class="row p-3 mb-2">
-    <div class="text-center col-md-8">
-        <h5>Crop Image</h5>
-        <image-cropper 
-        [imageChangedEvent]="imageChangedEvent" 
-        [maintainAspectRatio]="true" 
-        [aspectRatio]="4 / 4"
-        format="png" 
-        (imageCropped)="imageCropped($event)" 
-        ></image-cropper>
-    </div>
-    <div class="text-center col-md-4">
-        <h5>Preview</h5>
-        <img [src]="croppedImage" />
-    </div>
+<div class="">
+  <h5 class="text-center m-2">Editer l'image</h5>
+  <div style="max-width: 80%; margin: 0 auto;" class="grid justify-content-center">
+    <image-cropper
+      [imageChangedEvent]="imageChangedEvent"
+      [maintainAspectRatio]="true"
+      [aspectRatio]="4 / 4"
+      format="png"
+      (imageCropped)="imageCropped($event)"
+      [roundCropper]="true"
+    ></image-cropper>
+  </div>
 </div>
-<div class="row mb-2">
-    <p-button (click)="onCancel()"  label="Annuler" styleClass="p-button-text"></p-button>
-    <button (click)="onApply(croppedImage)" type="button" pButton icon="pi pi-check" label="Appliquer"></button>
+
+<div class="grid justify-content-center m-2">
+  <p-button
+    (click)="onCancel()"
+    label="Annuler"
+    styleClass="p-button-text"
+  ></p-button>
+  <button
+    (click)="onApply(croppedImage)"
+    type="button"
+    pButton
+    icon="pi pi-check"
+    label="Appliquer"
+  ></button>
 </div>
