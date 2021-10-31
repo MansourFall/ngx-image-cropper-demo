@@ -1,3 +1,26 @@
-<input (change)="setImageValue($event)" (click)="inputImage.value = ''" accept=".jpg, .jpeg, .png" class="file" #inputImage type="file">
-<h5>Profile picture</h5>
-<img [src]="croppedImage" />
+<div class="user-profile">
+  <div class="user-profile-img">
+    <p-avatar
+      [image]="croppedImage ? croppedImage : 'assets/images/no-image.jpeg'"
+      shape="circle"
+      size="xlarge"
+      (click)="inputImage.click()"
+    >
+    </p-avatar>
+    <div (click)="inputImage.click()" class="plus-icon">
+      <i
+        class="pi pi-plus-circle"
+        style="font-size: 2rem; background-color: green; border-radius: 50%"
+      ></i>
+    </div>
+  </div>
+
+  <input
+    (change)="setImageValue($event)"
+    (click)="inputImage.value = ''"
+    accept=".jpg, .jpeg, .png"
+    class="file"
+    #inputImage
+    type="file"
+  />
+</div>

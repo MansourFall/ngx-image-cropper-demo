@@ -1,0 +1,28 @@
+.user-profile {
+    width: 165px;
+    position: relative;
+    margin: 2rem auto;
+    
+    .plus-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background-color: #79c149;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 30px;
+      right: 20px;
+    }
+}
+
+.file {
+    display: none;
+}
+
+:host ::ng-deep .p-avatar {
+    width: 10rem;
+    height: 10rem;
+}
